@@ -1,0 +1,39 @@
+$gray: rgb(167, 167, 167);
+$white: white;
+$green: rgb(0, 255, 0);
+$orange: rgb(255, 166, 0);
+
+.product {
+    width: fit-content;
+    height: fit-content;
+    background-color: $gray;
+    display: flex;
+    row-gap: 0.5rem;
+    flex-direction: column;
+    padding: 1rem;
+    color: $white;
+    border-radius: 1rem;
+}
+
+.product:hover {
+    box-shadow: 0 0 1rem $white;
+}
+
+button {
+    color: $white;
+    outline: none;
+    border: 1px solid $white;
+    background-color: transparent;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    user-select: none;
+}
+
+button:hover {
+    box-shadow: 0 0 1rem $white;
+}
+
+button:active {
+    color: $green;
+    box-shadow: 0 0 1rem $green;
+}

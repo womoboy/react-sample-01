@@ -1,0 +1,12 @@
+$meloDark: rgb(101, 98, 116);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $meloDark;
+    font-family: sans-serif;
+}
