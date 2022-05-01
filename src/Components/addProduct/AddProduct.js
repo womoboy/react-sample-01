@@ -1,4 +1,3 @@
-import React from 'react';
 import './AddProduct.scss';
 import { useState } from 'react';
 
@@ -7,24 +6,24 @@ const AddProduct = ({ onAdd }) => {
 
     const formSubmit = (event) => {
         event.preventDefault();
-        onAdd({title});
+        onAdd({ title });
         setTitle('');
     }
 
     return (
         <>
-            <form className="add-form" onSubmit={formSubmit}>
+            <form className="form" onSubmit={formSubmit} >
                 <div>
-                    <input 
-                    id='title' 
+                    <input
                     type="text"
-                    placeholder="enter the product name"
+                    id='title'
+                    placeholder='enter the name'
                     value={title}
-                    onChange={(e)=> setTitle(e.target.value)}
+                    onChange={(e) => setTitle(e.target.value)}
                     />
                 </div>
                 <div>
-                    <input id='submit' type="submit" value="Add"/>
+                    <input id='submit' type="submit" />
                 </div>
             </form>
         </>

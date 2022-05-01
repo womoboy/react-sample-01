@@ -1,34 +1,32 @@
+$smokeWhite: rgb(207, 207, 207);
+$white: rgb(255, 255, 255);
 $green: rgb(0, 255, 0);
-$white: white;
 
-.add-form {
+.form {
     display: flex;
     justify-content: center;
-    align-items: center;
     padding: 1rem;
-
 }
 
 #title {
+    background: none;
     outline: none;
     border: none;
-    background: transparent;
-    color: white;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid $smokeWhite;
+    color: $white;
     padding: 0.5rem;
-    font-size: 1rem;
 }
 
 #title::placeholder {
-    color: rgb(192, 192, 192);
+    color: $smokeWhite;
 }
 
 #submit {
     background: none;
+    color: $white;
     outline: none;
     border: none;
-    color: white;
-    border: 1px solid white;
+    border: 1px solid $white;
     padding: 0.5rem;
     margin-left: 1rem;
 }
@@ -38,5 +36,6 @@ $white: white;
 }
 
 #submit:active {
-    box-shadow: $green;
+    box-shadow: 0 0 1rem $green;
+    color: $green;
 }

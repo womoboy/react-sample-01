@@ -1,4 +1,4 @@
-$meloDark: rgb(101, 98, 116);
+$color: rgb(74, 76, 92);
 
 * {
     margin: 0;
@@ -7,6 +7,6 @@ $meloDark: rgb(101, 98, 116);
 }
 
 body {
-    background-color: $meloDark;
+    background-color: $color;
     font-family: sans-serif;
 }

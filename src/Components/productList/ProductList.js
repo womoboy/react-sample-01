@@ -3,9 +3,9 @@ import './ProductList.scss';
 
 const ProductList = ({ products, onDelete }) => {
     return (
-        <>
-            <ul className='productList'>
-                {products.map((product)=>{return <Product key={product.id} product={product} onDelete={onDelete} />})}
+        <> 
+            <ul className='product-list'>
+                {products.map((product) => <Product key={product.id} title={product.title} id={product.id} onDelete={onDelete} />)}
             </ul>
         </>
     )
