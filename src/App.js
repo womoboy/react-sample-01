@@ -1,21 +1,41 @@
 import ProductList from './components/productList/ProductList';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AddProduct from './components/addProduct/AddProduct';
 
 const App = () => {
-    const [products, setProducts] = useState([
-        {id: 1, title: "Book 1"},
-        {id: 2, title: "Book 2"},
-        {id: 3, title: "Book 3"}
-    ]);
+    const [products, setProducts] = useState([]);
 
-    const productAddition = (title) => {
-        const id = Math.floor(Math.random() * 1000);
-        const newProduct = {id, ...title};
-        setProducts([...products, newProduct]);
+    //zamani ke component ejra shod boro va maghadir ro az server begir
+    useEffect(()=>{
+        const sendRequest = async () => {
+            const response = await fetch('http://localhost:8000/products');
+            const responseData = await response.json();
+            setProducts(responseData);
+        }
+        sendRequest();
+    }, [])
+
+    //zamani ke form submit shod meghdar ro ezafe kon be list
+    const productAddition = async (title) => {
+        const response = await fetch('http://localhost:8000/products', {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(title)
+        });
+
+        const responseData = await response.json();
+
+        setProducts([...products, responseData]);
     }
 
-    const deleteProduct = (id) => {
+    //hazf kon ba zadane dokmeye delete
+    const deleteProduct = async (id) => {
+        await fetch(`http://localhost:8000/products/${id}`, {
+            method: "DELETE"
+        })
+        
         setProducts(products.filter((product)=> product.id !== id));
     }
 
