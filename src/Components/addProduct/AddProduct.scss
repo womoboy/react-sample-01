@@ -1,0 +1,42 @@
+$green: rgb(0, 255, 0);
+$white: white;
+
+.add-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+}
+
+#title {
+    outline: none;
+    border: none;
+    background: transparent;
+    color: white;
+    border-bottom: 2px solid white;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+#title::placeholder {
+    color: rgb(192, 192, 192);
+}
+
+#submit {
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem;
+    margin-left: 1rem;
+}
+
+#submit:hover {
+    box-shadow: 0 0 1rem $white;
+}
+
+#submit:active {
+    box-shadow: $green;
+}
